@@ -1,0 +1,11 @@
+.score {
+	color: rgb(208, 212, 212);
+	font-size: 50px;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	line-height: 0.01em;
+}
+
+.score_number {
+	color: #2b7a69da;
+}
