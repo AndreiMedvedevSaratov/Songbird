@@ -4,6 +4,7 @@ import animalsInfo from './Assets/Data/animalsInfo';
 import Header from './Components/Header/Header';
 import Quiz from './Components/Quiz/Quiz'
 import random from "lodash/random";
+import Tabs from "./Components/Tabs/Tabs";
 
 const beginningState = {
   score: 0,
@@ -27,6 +28,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header Result={this.currentState.score} />
+        <Tabs currentTabNum={this.currentState.currentTabNum} />
         <Quiz
           toPlay={this.currentState.toPlay}
           name={this.currentState.animals.name}
