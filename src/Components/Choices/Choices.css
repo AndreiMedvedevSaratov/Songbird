@@ -1,0 +1,41 @@
+.choices {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 50%;
+	max-width: 49%;
+	background: #535353;
+	height: 320px;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.choice {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	height: 100%;
+}
+
+.choice > span {
+	color: white;
+}
+
+.choice:hover {
+	background: #29796b;
+}
+
+.grey {
+	background: grey;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	margin: 0px 12px 0 25px;
+}
+
+.green {
+	background: #29796b;
+}
+
+.red {
+	background: rgb(243, 76, 46);
+}

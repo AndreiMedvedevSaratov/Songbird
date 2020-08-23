@@ -1,7 +1,6 @@
 .rhap_container {
 	width: 100%;
 	display: flex;
-	flex-direction: row-reverse;
 }
 
 .rhap_progress-section {

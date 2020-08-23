@@ -3,8 +3,10 @@ import './App.css';
 import animalsInfo from './Assets/Data/animalsInfo';
 import Header from './Components/Header/Header';
 import Quiz from './Components/Quiz/Quiz'
-import random from "lodash/random";
-import Tabs from "./Components/Tabs/Tabs";
+import random from 'lodash/random';
+import Tabs from './Components/Tabs/Tabs';
+import Choices from './Components/Choices/Choices';
+import Information from './Components/Information/Information'
 
 const beginningState = {
   score: 0,
@@ -17,6 +19,10 @@ const beginningState = {
   toPlay: false,
   currentTabNum: 0,
   random: random(0, 5),
+  selectedChoice: 0,
+  mistakes: new Array(6).fill("grey"),
+  classHint: "visible",
+  classDescription: "hidden",
 }
 
 class App extends React.Component {
@@ -35,6 +41,25 @@ class App extends React.Component {
           image={this.currentState.animals.image}
           audio={animalsInfo[this.currentState.currentTabNum][this.currentState.random].audio}
         />
+        <div className="selection_wrapper">
+          <Choices
+            currentTabNum={this.currentState.currentTabNum}
+            onTap={event => this.handleVariants(event)}
+            onClick={event => this.handleVariant(event)}
+            random={this.currentState.random}
+            mistakes={this.currentState.mistakes}
+          />
+          <Information
+            hint={this.currentState.animals.description}
+            classHint={this.currentState.classHint}
+            classDescription={this.currentState.classDescription}
+            image={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].image}
+            name={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].name}
+            latin={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].species}
+            audio={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].audio}
+            description={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].description}
+          />
+        </div>
       </div>
     );
   }

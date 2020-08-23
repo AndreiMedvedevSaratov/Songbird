@@ -1,3 +1,9 @@
 .App {
-  text-align: center;
+  position: relative;
+}
+
+.selection_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }

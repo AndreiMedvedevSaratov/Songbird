@@ -1,0 +1,8 @@
+.information {
+	display: flex;
+	background: #484b4b;
+	flex: 0 0 50%;
+	max-width: 49%;
+	border-radius: 15px;
+	color: white;
+}
