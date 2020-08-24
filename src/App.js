@@ -8,6 +8,8 @@ import Tabs from './Components/Tabs/Tabs';
 import Choices from './Components/Choices/Choices';
 import Information from './Components/Information/Information'
 import ButtonNextLevel from './Components/ButtonNextLevel/ButtonNextLevel';
+import soundWrong from './Assets/Sounds/wrong_sound.mp3';
+import soundRight from './Assets/Sounds/right_sound.mp3';
 
 const beginningState = {
   score: 0,
@@ -25,14 +27,92 @@ const beginningState = {
   classHint: "visible",
   classDescription: "hidden",
   isButtonNextLevelActive: false,
+  chosenVariant: 0,
+  pressedVariants: new Set(),
+  isGuessedRight: false,
+  addScore: 5,
 }
 
 class App extends React.Component {
   currentState = beginningState;
 
-  render() {
-    console.log(this.currentState);
+  handleVariants = event => {
+    if (event.target.closest(".choice") === null) {
+      return;
+    }
+    const index = event.target.closest(".choice").dataset.index;
 
+    this.setState({
+      chosenVariant: +index,
+      classDescription: "visible",
+      classHint: "hidden"
+    });
+
+    const handleTrueVariant = () => {
+      if (this.currentState.isGuessedRight === false) {
+        this.setState({
+          score: this.currentState.score + this.currentState.addScore,
+          isGuessedRight: true,
+          isButtonNextActive: true,
+          animals: {
+            name: animalsInfo[this.currentState.currentTabNum][this.currentState.random].name,
+            image:
+              animalsInfo[this.currentState.currentTabNum][this.currentState.random].image
+          }
+        });
+
+        if (this.currentState.currentTabNum === 5) {
+          this.setState({
+            end: "end_wrapper"
+          });
+        }
+      }
+    };
+
+    const handleFalseVariant = () => {
+      if (
+        this.currentState.addScore > 0 &&
+        this.currentState.pressedVariants.has(index) === false
+      ) {
+        this.setState({
+          addScore: this.currentState.addScore - 1
+        });
+      }
+
+      const pressedVariants = this.currentState.pressedVariants;
+      pressedVariants.add(index);
+      this.setState({ pressedVariants });
+    };
+
+    +index === this.currentState.random
+      ? handleTrueVariant()
+      : handleFalseVariant();
+  };
+
+  handleVariant = event => {
+    const index = +event.currentTarget.dataset.index;
+    const mistakes = this.currentState.mistakes.concat();
+
+    const makeGreen = () => {
+      mistakes.splice(index, 1, "grey green");
+      this.setState({ mistakes });
+      this.audio = new Audio(soundRight);
+      this.audio.play();
+      this.setState({ toPlay: true });
+    };
+
+    const makeRed = () => {
+      mistakes.splice(index, 1, "grey red");
+      this.setState({ mistakes });
+      this.audio = new Audio(soundWrong);
+      this.audio.play();
+    };
+
+    index === this.currentState.randomNum ? makeGreen() : makeRed();
+  };
+
+  render() {
+    console.log('1= ' + this.currentState.score);
     return (
       <div className="App">
         <Header Result={this.currentState.score} />
