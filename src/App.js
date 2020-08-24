@@ -7,6 +7,7 @@ import random from 'lodash/random';
 import Tabs from './Components/Tabs/Tabs';
 import Choices from './Components/Choices/Choices';
 import Information from './Components/Information/Information'
+import ButtonNextLevel from './Components/ButtonNextLevel/ButtonNextLevel';
 
 const beginningState = {
   score: 0,
@@ -23,6 +24,7 @@ const beginningState = {
   mistakes: new Array(6).fill("grey"),
   classHint: "visible",
   classDescription: "hidden",
+  isButtonNextLevelActive: false,
 }
 
 class App extends React.Component {
@@ -60,6 +62,11 @@ class App extends React.Component {
             description={animalsInfo[this.currentState.currentTabNum][this.currentState.selectedChoice].description}
           />
         </div>
+        <ButtonNextLevel
+          name="Next Level"
+          active={this.currentState.isButtonNextLevelActive}
+          onClick={() => this.buttonNextLevelHandler()}
+        />
       </div>
     );
   }
