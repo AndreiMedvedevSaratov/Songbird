@@ -27,7 +27,6 @@ const beginningState = {
   classHint: "visible",
   classDescription: "hidden",
   isButtonNextLevelActive: false,
-  chosenVariant: 0,
   pressedVariants: new Set(),
   isGuessedRight: false,
   addScore: 5,
@@ -43,7 +42,7 @@ class App extends React.Component {
     const index = event.target.closest(".choice").dataset.index;
 
     this.setState({
-      chosenVariant: +index,
+      selectedChoice: +index,
       classDescription: "visible",
       classHint: "hidden"
     });
@@ -53,7 +52,7 @@ class App extends React.Component {
         this.setState({
           score: this.currentState.score + this.currentState.addScore,
           isGuessedRight: true,
-          isButtonNextActive: true,
+          isButtonNextLevelActive: true,
           animals: {
             name: animalsInfo[this.currentState.currentTabNum][this.currentState.random].name,
             image:
@@ -108,7 +107,36 @@ class App extends React.Component {
       this.audio.play();
     };
 
-    index === this.currentState.randomNum ? makeGreen() : makeRed();
+    index === this.currentState.random ? makeGreen() : makeRed();
+  };
+
+  buttonNextLevelHandler = () => {
+    if (this.currentState.isButtonNextLevelActive) {
+      if (this.currentState.currentTabNum === 5) {
+        this.setState(beginningState);
+        this.setState({
+          pressedVariants: new Set()
+        });
+        return;
+      }
+      this.setState({
+        animals: {
+          name: beginningState.animals.name,
+          image: beginningState.animals.image,
+          description: beginningState.animals.description
+        },
+        random: random(0, 5),
+        addScore: beginningState.addScore,
+        isButtonNextLevelActive: beginningState.isButtonNextLevelActive,
+        isGuessedRight: beginningState.isGuessedRight,
+        pressedVariants: new Set(),
+        classDescription: beginningState.classDescription,
+        classHint: beginningState.classHint,
+        currentTabNum: this.currentState.currentTabNum + 1,
+        mistakes: beginningState.mistakes,
+        toPlay: beginningState.toPlay
+      });
+    }
   };
 
   render() {
