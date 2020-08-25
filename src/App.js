@@ -30,6 +30,8 @@ const beginningState = {
   pressedVariants: new Set(),
   isGuessedRight: false,
   addScore: 5,
+  end: "end_wrapper-hidden",
+  endImage: "end_image-hidden"
 }
 
 class App extends React.Component {
@@ -175,6 +177,23 @@ class App extends React.Component {
           active={this.currentState.isButtonNextLevelActive}
           onClick={() => this.buttonNextLevelHandler()}
         />
+        <div className={this.currentState.end}>
+          <h1 className="score-end">Score:<span className="score-end-number">{this.currentState.score}</span></h1>
+          <h2 className={this.currentState.score === 30 ? "" : beginningState.endImage}>
+            Done. You are an absolute winner!
+          </h2>
+          <img
+            style={{ width: "50%" }}
+            src="https://i.gifer.com/YARz.gif"
+            className={this.currentState.score === 30 ? "" : beginningState.endImage}
+            alt="winner"
+          />
+          <ButtonNextLevel
+            name="Try again!"
+            active={this.currentState.isButtonNextLevelActive}
+            onClick={() => this.buttonNextLevelHandler()}
+          />
+        </div>
       </div>
     );
   }
