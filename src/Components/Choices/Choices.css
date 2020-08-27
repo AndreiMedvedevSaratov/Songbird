@@ -10,10 +10,10 @@
 }
 
 .choice {
-	display: flex;
 	align-items: center;
 	cursor: pointer;
 	height: 100%;
+	background: #29796b;
 }
 
 .choice > span {
