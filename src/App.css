@@ -47,3 +47,13 @@
 .score-end-number {
   color: rgb(220, 245, 245);
 }
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible {
+  display: block;
+  visibility: visible;
+}

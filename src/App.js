@@ -142,10 +142,9 @@ class App extends React.Component {
   };
 
   render() {
-    console.log('1= ' + this.currentState.score);
     return (
       <div className="App">
-        <Header Result={this.currentState.score} />
+        <Header score={this.currentState.score} />
         <Tabs currentTabNum={this.currentState.currentTabNum} />
         <Quiz
           toPlay={this.currentState.toPlay}

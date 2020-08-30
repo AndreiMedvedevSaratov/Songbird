@@ -14,7 +14,7 @@ export default function Choices(props) {
 	})
 
 	return (
-		<div className="choice" onClick={props.onTap}>
+		<div className="choices" onClick={props.onTap}>
 			{choices}
 		</div>
 	)

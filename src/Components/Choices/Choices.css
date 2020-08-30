@@ -14,6 +14,7 @@
 	cursor: pointer;
 	height: 100%;
 	background: #29796b;
+	display: flex;
 }
 
 .choice > span {

@@ -1,6 +1,7 @@
 .rhap_container {
 	width: 100%;
 	display: flex;
+	flex-direction: row-reverse;
 }
 
 .rhap_progress-section {
@@ -12,6 +13,16 @@
 }
 
 .rhap_progress-container {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.rhap_progress-bar {
+	background-color: #008966;
+}
+
+.rhap_progress-indicator {
 	width: 100%;
 	overflow: hidden;
 	border-radius: 5px;
