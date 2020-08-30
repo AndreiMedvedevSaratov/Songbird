@@ -9,7 +9,7 @@ export default function Quiz(props) {
 			<AnimalImage src={props.image} />
 			<div style={{ display: 'flex', flex: 'auto' }}>
 				<h2 style={{ textAlign: 'center' }}>{props.name}</h2>
-				<Player src={props.audio} toPlay={props.toPlay} />
+				<Player src={props.audio} toPause={props.toPause} />
 			</div>
 		</div>
 	)

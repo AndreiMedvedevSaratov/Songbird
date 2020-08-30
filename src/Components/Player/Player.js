@@ -4,7 +4,7 @@ import "./Player.css";
 
 class Player extends React.Component {
 	handlePlayer = () => {
-		// if (this.props.toPlay) {
+		// if (this.props.toPause) {
 		// 	this.player.audio.pause();
 		// }
 	};
@@ -15,7 +15,7 @@ class Player extends React.Component {
 				ref={c => {
 					this.player = c;
 				}}
-				toPlay={this.handlePlayer()}
+				toPause={this.handlePlayer()}
 				autoPlayAfterSrcChange={false}
 				src={this.props.src}
 			/>

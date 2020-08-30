@@ -19,7 +19,7 @@ const beginningState = {
     description:
       'AnimalSong - викторина распознавания животных по их голосам. Прослушайте запись и выберите животное из списка!'
   },
-  toPlay: false,
+  toPause: false,
   currentTabNum: 0,
   random: random(0, 5),
   selectedChoice: 0,
@@ -99,7 +99,7 @@ class App extends React.Component {
       this.setState({ mistakes });
       this.audio = new Audio(soundRight);
       this.audio.play();
-      this.setState({ toPlay: true });
+      this.setState({ toPause: true });
     };
 
     const makeRed = () => {
@@ -136,7 +136,7 @@ class App extends React.Component {
         classHint: beginningState.classHint,
         currentTabNum: this.state.currentTabNum + 1,
         mistakes: beginningState.mistakes,
-        toPlay: beginningState.toPlay
+        toPause: beginningState.toPause
       });
     }
   };
@@ -147,7 +147,7 @@ class App extends React.Component {
         <Header score={this.state.score} />
         <Tabs currentTabNum={this.state.currentTabNum} />
         <Quiz
-          toPlay={this.state.toPlay}
+          toPause={this.state.toPause}
           name={this.state.animals.name}
           image={this.state.animals.image}
           audio={animalsInfo[this.state.currentTabNum][this.state.random].audio}
