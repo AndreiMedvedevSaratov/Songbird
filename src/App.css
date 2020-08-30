@@ -57,3 +57,9 @@
   display: block;
   visibility: visible;
 }
+
+@media (max-width: 750px) {
+  .selection_wrapper {
+    flex-direction: column;
+  }
+}

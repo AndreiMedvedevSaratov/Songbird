@@ -9,3 +9,12 @@
 	display: flex;
 	flex-direction: column;
 }
+@media (max-width: 460px) {
+	.quiz {
+		flex-direction: column;
+	}
+
+	.quiz img {
+		margin: 0 auto;
+	}
+}

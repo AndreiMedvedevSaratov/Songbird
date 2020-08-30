@@ -40,3 +40,9 @@
 .red {
 	background: rgb(243, 76, 46);
 }
+
+@media (max-width: 750px) {
+	.choices {
+		max-width: initial;
+	}
+}

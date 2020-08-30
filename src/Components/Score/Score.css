@@ -1,11 +1,31 @@
 .score {
 	color: rgb(208, 212, 212);
-	font-size: 50px;
-	font-weight: normal;
+	font-size: 46px;
+	font-weight: bold;
 	letter-spacing: 0.05em;
-	line-height: 0.01em;
+	line-height: 0.8em;
 }
 
 .score_number {
 	color: #2b7a69da;
+}
+
+@media (max-width: 750px) {
+	.score {
+		font-size: 32px;
+	}
+
+	.score_number {
+		font-size: 32px;
+	}
+}
+
+@media (max-width: 450px) {
+	.score {
+		font-size: 24px;
+	}
+
+	.score_number {
+		font-size: 24px;
+	}
 }
