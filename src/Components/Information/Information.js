@@ -1,7 +1,7 @@
 import React from 'react'
 import './Information.css'
 import AnimalImage from '../AnimalImage/AnimalImage'
-import Player from '../AudioPlayer/AudioPlayer'
+import Player from '../Player/Player'
 
 export default function Information(props) {
 	return (

@@ -1,12 +1,12 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
-import "./AudioPlayer.css";
+import "./Player.css";
 
 class Player extends React.Component {
 	handlePlayer = () => {
-		if (this.props.toPlay) {
-			this.player.audio.pause();
-		}
+		// if (this.props.toPlay) {
+		// 	this.player.audio.pause();
+		// }
 	};
 
 	render() {
