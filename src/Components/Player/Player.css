@@ -1,0 +1,57 @@
+.rhap_container {
+	width: 100%;
+}
+
+.rhap_progress-section {
+	width: 100%;
+}
+
+.rhap_current-time {
+	display: none;
+}
+
+.rhap_progress-container {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.rhap_progress-bar {
+	background-color: #008966;
+}
+
+.rhap_progress-indicator {
+	height: 10px;
+	background: rgb(208, 212, 212);
+	position: relative;
+}
+
+.rhap_time {
+	display: none;
+}
+
+.rhap_additional-controls {
+	display: none;
+}
+
+.rhap_forward-button,
+.rhap_rewind-button {
+	display: none;
+}
+
+.rhap_volume-controls {
+	display: none;
+}
+
+.rhap_play-pause-button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	outline: none;
+}
+
+.rhap_play-pause-button > svg {
+	width: 45px;
+	height: 45px;
+	color: #008966;
+}

@@ -1,0 +1,25 @@
+.logotip {
+	width: 250px;
+	color: rgb(226, 230, 27);
+	font-size: 46px;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	line-height: 0.8em;
+	text-decoration: none;
+}
+
+.logo_bird {
+	color: #2b7a69da;
+}
+
+@media (max-width: 750px) {
+	.logotip {
+		font-size: 32px;
+	}
+}
+
+@media (max-width: 450px) {
+	.logotip {
+		font-size: 24px;
+	}
+}
