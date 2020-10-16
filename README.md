@@ -1,3 +1,14 @@
+This project was created with React.
+
+I added informtion about Animals instead of preinstalled information about Birds.
+
+Status of project: Done!
+
+Deploy: https://andreimedvedevsaratov-songbird.netlify.app/
+
+___________________________________________________________________________________________________________________
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
