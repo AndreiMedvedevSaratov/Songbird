@@ -1,10 +1,14 @@
 This project was created with React.
 
-I added informtion about Animals instead of preinstalled information about Birds.
+I added information about Animals instead of pre-installed information about Birds.
 
 Status of project: Done!
 
 Deploy: https://andreimedvedevsaratov-songbird.netlify.app/
+
+For any additional information, feel free to contact with me by:
+Tel: +7-917-215-19-68
+e-mail: andreiok@gmail.com
 
 ___________________________________________________________________________________________________________________
 
